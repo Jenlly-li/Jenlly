@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级水平导航菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .logo{
+            font-size:18px;
+            padding:8px;
+        }
+        /* 一级ul，flex实现水平排列 */
+        body>ul:nth-child(2){
+            display:flex;
+            background:#0052a5;
+        }
+        body>ul:nth-child(2)>li{
+            position: relative; /*父元素相对定位，给二级菜单做参照物*/
+            padding:12px 22px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        /* 二级子菜单：默认隐藏 */
+        li>ul{
+            position:absolute;  /*子菜单绝对定位*/
+            top:100%;
+            left:0;
+            background:#0052a5;
+            display:none;
+        }
+        li>ul>li{
+            padding:10px 16px;
+            white-space: nowrap;
+        }
+        /* 鼠标悬浮一级li，显示二级菜单 */
+        body>ul:nth-child(2)>li:hover{
+            background-color:#003b78;
+        }
+        body>ul:nth-child(2)>li:hover>ul{
+            display:block;
+        }
+        /* 二级菜单项悬浮效果 */
+        li>ul>li:hover{
+            background:#003b78;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="logo">欢迎访问湖南文理学院</li>
+    </ul>
+    <ul>         
+        <li><a href=" ">首页</a ></li>
+        <li><a href="#">教学院(部)</a >
+            <ul>
+                <li><a href="#">计算机与电气工程学院</a ></li>
+                <li><a href="#">芙蓉学院</a ></li>
+            </ul>
+        </li>
+        <li><a href="#">党群机构</a ></li>        
+        <li><a href="#">行政教辅机构</a ></li>
+        <li><a href="#">教学科研</a ></li>
+        <li><a href="#">招生就业</a ></li>
+        <li><a href="#">国际交流</a ></li>
+        <li><a href="#">数字图书馆</a ></li>
+    </ul>    
+</body>
+</html>
